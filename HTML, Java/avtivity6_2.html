@@ -1,0 +1,53 @@
+<html>
+<body>
+
+<h2>COLLEGE RESULTS PORTAL</h2>
+
+<input type="text" id="no" placeholder="Enter Regno"><br>
+<button onclick="showresults()">Get Results</button>
+
+<p id="result"></p>
+
+<script>
+function showresults() {
+
+    const students = [
+        {
+            "Regno": "1923",
+            "Name": "Rev",
+            "Ip": "90",
+            "Results": "pass"
+        },
+        {
+            "Regno": "1924",
+            "Name": "Krish",
+            "Ip": "99",
+            "Results": "pass"
+        },
+        {
+            "Regno": "1925",
+            "Name": "Kar",
+            "Ip": "91",
+            "Results": "pass"
+        }
+    ];
+
+    var input = document.getElementById("no").value;
+    var output = document.getElementById("result");
+
+    for (var i = 0; i < students.length; i++) {
+        if (input == students[i].Regno) {
+            output.innerHTML =
+                "Name: " + students[i].Name + "<br>" +
+                "IP Marks: " + students[i].Ip + "<br>" +
+                "Result: " + students[i].Results;
+            return;
+        }
+    }
+
+    output.innerHTML = "No record found";
+}
+</script>
+
+</body>
+</html>
